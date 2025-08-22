@@ -664,9 +664,9 @@ const Events = () => {
                 </p>
                 <p className="text-gray-700">{event.description}</p>
                 <div className="mt-4 pt-4 border-t">
-                  <Button variant="outline" size="sm" className="w-full">
+                  {/* <Button variant="outline" size="sm" className="w-full">
                     More Details
-                  </Button>
+                  </Button> */}
                 </div>
               </Card>
             </motion.div>
