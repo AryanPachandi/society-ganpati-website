@@ -1088,7 +1088,7 @@ const Notices = () => {
                 {/* <span>Emergency: +91 8767907739</span> */}
                 <span>Emergency: +91 8669230258</span>
               </a>
-              <a href="https://wa.me/8468913733" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center space-x-2 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+              <a href="https://wa.me/918468913733" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center space-x-2 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
                 <MessageCircle className="h-4 w-4" />
                 <span>WhatsApp</span>
               </a>
@@ -1361,7 +1361,7 @@ const Contact = () => {
               <div className="mt-8 pt-6 border-t">
                 <h3 className="font-semibold mb-4">Connect with us</h3>
                 <div className="flex space-x-4">
-                  <a href="https://wa.me/8767907739" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                  <a href="https://wa.me/918767907739" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
                     <MessageCircle className="h-5 w-5" />
                   </a>
                   <a href="#" className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
