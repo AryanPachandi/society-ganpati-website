@@ -1,4 +1,23 @@
 import React, { useState, useEffect } from 'react';
+
+
+import logo from "./assets/WhatsApp Image 2025-08-21 at 11.33.35 AM.jpeg";
+import img1 from "./assets/img1.jpeg"
+import img2 from "./assets/img2.jpeg"
+import img3 from "./assets/img3.jpeg"
+import img4 from "./assets/img4.jpeg"
+import img5 from "./assets/img5.jpeg"
+import img6 from "./assets/img6.jpeg"
+import img7 from "./assets/img7.jpeg"
+import img8 from "./assets/img8.jpeg"
+import img9 from "./assets/img9.jpeg"
+import img10 from "./assets/img10.jpeg"
+import img11 from "./assets/img11.jpeg"
+import img12 from "./assets/img12.jpeg"
+// import img13 from "./assets/img13.jpeg"
+
+// import { Card } from "@/components/ui/card";
+// import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -21,29 +40,48 @@ import {
 
 // Mock data
 const eventsData = [
-  { id: 1, day: "Day 1", title: "Ganesh Sthapana", time: "06:00 AM", category: "Religious", description: "Installation of Lord Ganesh idol with traditional rituals" },
-  { id: 2, day: "Day 2", title: "Aarti & Bhajan", time: "07:00 PM", category: "Religious", description: "Evening prayers and devotional songs" },
-  { id: 3, day: "Day 3", title: "Cultural Dance Competition", time: "08:00 PM", category: "Cultural", description: "Traditional and modern dance performances by participants" },
-  { id: 4, day: "Day 4", title: "Cooking Competition", time: "05:00 PM", category: "Competition", description: "Modak making and other traditional sweets competition" },
-  { id: 5, day: "Day 5", title: "Kids Fancy Dress", time: "06:00 PM", category: "Competition", description: "Children dressed as various deities and characters" },
-  { id: 6, day: "Day 6", title: "Bhajan Sandhya", time: "07:30 PM", category: "Religious", description: "Evening of devotional music and hymns" },
-  { id: 7, day: "Day 7", title: "Cultural Program", time: "08:00 PM", category: "Cultural", description: "Grand cultural evening with local artists" },
-  { id: 8, day: "Day 8", title: "Rangoli Competition", time: "04:00 PM", category: "Competition", description: "Beautiful rangoli designs competition" },
-  { id: 9, day: "Day 9", title: "Prasad Distribution", time: "12:00 PM", category: "Religious", description: "Distribution of blessed food to devotees" },
-  { id: 10, day: "Day 10", title: "Visarjan Ceremony", time: "04:00 PM", category: "Religious", description: "Farewell ceremony for Lord Ganesh" },
+  { id: 1, day: "Day 1 Date : 27/08/2025", title: "Ganesh Pooja (Aagaman)", time: "07:30 PM", category: "Religious", description: "Installation of Lord Ganesh idol with traditional rituals" },
+  { id: 2, day: "Day 1 Date : 27/08/2025", title: "Musical Chair", time: "08:30 PM", category: "Cultural", description: "Fun musical chair competition" },
+
+  { id: 3, day: "Day 2 Date : 28/08/2025", title: "1st to 10th Std Sports Competition", time: "05:00 PM", category: "Competition", description: "Sports competitions for school students" },
+  { id: 4, day: "Day 2 Date : 28/08/2025", title: "Fireless Cooking", time: "After Aarti", category: "Competition", description: "Cooking without fire competition" },
+
+  { id: 5, day: "Day 3 Date : 29/08/2025", title: "Fun Fair", time: "06:00 PM", category: "Cultural", description: "Community fun fair with games and stalls" },
+  { id: 6, day: "Day 3 Date : 29/08/2025", title: "Home Minister", time: "09:00 PM", category: "Cultural", description: "Entertaining 'Home Minister' contest" },
+
+  { id: 7, day: "Day 4 Date : 30/08/2025", title: "Atharvashirsha Pathan", time: "03:30 PM", category: "Religious", description: "Recitation of Atharvashirsha" },
+  { id: 8, day: "Day 4 Date : 30/08/2025", title: "Fun Fair 2.0", time: "06:00 PM", category: "Cultural", description: "Second day of fun fair" },
+  { id: 9, day: "Day 4 Date : 30/08/2025", title: "Cultural Night", time: "09:00 PM", category: "Cultural", description: "Cultural night with performances" },
+
+  { id: 10, day: "Day 5 Date : 31/08/2025", title: "Essay & Drawing Competition", time: "10:00 AM", category: "Competition", description: "Essay writing and drawing competition" },
+  { id: 11, day: "Day 5 Date : 31/08/2025", title: "Mehendi, Rangoli & Carrom", time: "12:30 PM", category: "Competition", description: "Mehendi, Rangoli and Carrom competitions" },
+  { id: 12, day: "Day 5 Date : 31/08/2025", title: "Murti Making (for kids)", time: "01:30 PM", category: "Competition", description: "Clay idol making competition for kids" },
+  { id: 13, day: "Day 5 Date : 31/08/2025", title: "Fun Fair for Kids", time: "After Aarti", category: "Cultural", description: "Fun fair designed for kids" },
+
+  { id: 14, day: "Day 6 Date : 01/09/2025", title: "Prize Distribution", time: "After Aarti", category: "Cultural", description: "Prize distribution ceremony" },
+
+  { id: 15, day: "Day 7 Date : 02/09/2025", title: "Box Cricket", time: "After Aarti", category: "Competition", description: "Box cricket matches" },
+  { id: 16, day: "Day 7 Date : 02/09/2025", title: "Ganpati Visarjan", time: "08:00 PM", category: "Religious", description: "Farewell and immersion ceremony of Lord Ganesh" },
 ];
 
+
 const galleryImages = [
-  "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400",
-  "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400",
-  "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400",
-  "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400",
-  "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400",
-  "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400",
+  img1,
+  img2,
+  img4,
+  img5,
+  img6,
+  img7,
+  img8,
+  img9,
+  img10,
+  img11,
+  img12,
+
 ];
 
 const notices = [
-  { id: 1, title: "Today's Aarti at 7PM", date: "2025-08-21", priority: "high" },
+  { id: 1, title: "EveryDay Aarti at 7:30 PM", date: "2025-08-21", priority: "high" },
   { id: 2, title: "Volunteer Registration Open", date: "2025-08-20", priority: "medium" },
   { id: 3, title: "Parking Guidelines Updated", date: "2025-08-19", priority: "low" },
   { id: 4, title: "Cultural Program Rehearsals", date: "2025-08-18", priority: "medium" },
@@ -230,7 +268,14 @@ const Navbar = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                <span className="text-orange-500 font-bold text-lg">🐘</span>
+                <span className="text-orange-500 font-bold text-lg">
+                <img
+  src={logo}
+  alt="Ganpati Mandal Logo"
+  className="w-12 h-12 rounded-full object-cover"
+/>
+
+                </span>
               </div>
               <span className="text-white font-bold text-xl">Ganpati Mandal</span>
             </Link>
@@ -333,7 +378,7 @@ const Footer = () => (
       </div>
       <div className="border-t border-gray-700 mt-8 pt-4 text-center text-gray-400">
         <p>&copy; 2025 Yashomangal Society Ganpati Mandal. All rights reserved.</p>
-        <p className="mt-2">Developed by <span className="text-orange-400 font-semibold">Aryan Pachandi & Divesh Goankar </span></p>
+        <p className="mt-2">Developed by <span className="text-orange-400 font-semibold">Aryan Pachandi  </span></p>
       </div>
     </div>
   </footer>
@@ -394,7 +439,7 @@ const Home = () => {
             transition={{ delay: 0.6, duration: 0.8 }}
           >
             <img
-              src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=300&fit=crop"
+              src="src/assets/WhatsApp Image 2025-08-21 at 11.33.35 AM.jpeg"
               alt="Lord Ganesh"
               className="w-full h-full object-cover"
             />
@@ -490,7 +535,7 @@ const Home = () => {
               className="relative"
             >
               <img
-                src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500&h=400&fit=crop"
+                src={img1}
                 alt="Mandal celebration"
                 className="rounded-lg shadow-xl"
               />
@@ -815,9 +860,9 @@ const handleSubmit = async (e) => {
               For any queries regarding the application process, feel free to contact us
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="tel:+919876543210" className="flex items-center justify-center space-x-2 text-blue-600 hover:text-blue-800">
+              <a href="tel:+918767907739" className="flex items-center justify-center space-x-2 text-blue-600 hover:text-blue-800">
                 <Phone className="h-4 w-4" />
-                <span>+91 98765 43210</span>
+                <span>+91 8767907739</span>
               </a>
               <a href="mailto:yashomagalmitramandal@gmail.com" className="flex items-center justify-center space-x-2 text-blue-600 hover:text-blue-800">
                 <Mail className="h-4 w-4" />
@@ -831,11 +876,9 @@ const handleSubmit = async (e) => {
   );
 };
 
-// Gallery Page Component
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
-
-  return (
+    return (
     <motion.div
       className="min-h-screen bg-gray-50 py-8"
       initial={{ opacity: 0 }}
@@ -853,6 +896,7 @@ const Gallery = () => {
           <p className="text-xl text-gray-600">Memories from our celebrations</p>
         </motion.div>
 
+        {/* Grid of images */}
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
           initial={{ opacity: 0 }}
@@ -862,7 +906,7 @@ const Gallery = () => {
           {galleryImages.map((image, index) => (
             <motion.div
               key={index}
-              className="relative group cursor-pointer overflow-hidden rounded-lg shadow-md"
+              className="relative overflow-hidden rounded-lg shadow-md bg-gray-200 cursor-pointer"
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.1 * index, duration: 0.5 }}
@@ -873,10 +917,11 @@ const Gallery = () => {
                 src={image}
                 alt={`Gallery image ${index + 1}`}
                 className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                loading="lazy"
+                onError={(e) => {
+                  e.target.src = "https://via.placeholder.com/400x300/FF6B35/FFFFFF?text=Gallery+Image";
+                }}
               />
-              <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                <ImageIcon className="h-8 w-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
             </motion.div>
           ))}
         </motion.div>
@@ -917,6 +962,11 @@ const Gallery = () => {
     </motion.div>
   );
 };
+
+
+
+
+
 
 // Notices Page Component
 const Notices = () => {
@@ -1002,8 +1052,7 @@ const Notices = () => {
                 </div>
                 <h3 className="text-xl font-bold mb-2">{notice.title}</h3>
                 <p className="text-gray-700">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
                 </p>
                 <div className="mt-4 pt-4 border-t">
                   <Button variant="outline" size="sm">
@@ -1028,11 +1077,12 @@ const Notices = () => {
               For urgent matters during festival days, please contact our emergency helpline
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="tel:+919876543210" className="flex items-center justify-center space-x-2 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
+              <a href="tel: +918767907739" className="flex items-center justify-center space-x-2 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
                 <Phone className="h-4 w-4" />
-                <span>Emergency: +91 98765 43210</span>
+                <span>Emergency: +91 8767907739</span>
+                <span>Emergency: +91 8669230258</span>
               </a>
-              <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center space-x-2 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+              <a href="https://wa.me/8468913733" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center space-x-2 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
                 <MessageCircle className="h-4 w-4" />
                 <span>WhatsApp</span>
               </a>
@@ -1119,7 +1169,7 @@ const Sponsors = () => {
                   Contact Us
                 </Button>
               </Link>
-              <a href="tel:+919876543210">
+              <a href="tel:+918767907739">
                 <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-orange-500">
                   Call Now
                 </Button>
@@ -1202,7 +1252,7 @@ const FAQ = () => {
               Our team is here to help! Feel free to reach out to us through any of the following channels.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <a href="tel:+919876543210" className="flex items-center justify-center space-x-2 bg-blue-600 text-white px-4 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+              <a href="tel:+918767907739" className="flex items-center justify-center space-x-2 bg-blue-600 text-white px-4 py-3 rounded-lg hover:bg-blue-700 transition-colors">
                 <Phone className="h-5 w-5" />
                 <span>Call Us</span>
               </a>
@@ -1269,8 +1319,8 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold">Phone</h3>
                     <p className="text-gray-600">
-                      <a href="tel:+919876543210" className="hover:text-orange-500">+91 98765 43210</a><br />
-                      <a href="tel:+919876543211" className="hover:text-orange-500">+91 98765 43211</a>
+                      <a href="tel:+918767907739" className="hover:text-orange-500">+91 8767907739</a><br />
+                      <a href="tel:+918669230258" className="hover:text-orange-500">+91 8669230258</a>
                     </p>
                   </div>
                 </div>
@@ -1305,7 +1355,7 @@ const Contact = () => {
               <div className="mt-8 pt-6 border-t">
                 <h3 className="font-semibold mb-4">Connect with us</h3>
                 <div className="flex space-x-4">
-                  <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                  <a href="https://wa.me/8767907739" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
                     <MessageCircle className="h-5 w-5" />
                   </a>
                   <a href="#" className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
@@ -1350,7 +1400,7 @@ const Contact = () => {
           whileTap={{ scale: 0.9 }}
         >
           <a
-            href="https://wa.me/919876543210"
+            href="https://wa.me/8767907739"
             target="_blank"
             rel="noopener noreferrer"
             className="w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors"
