@@ -461,7 +461,7 @@ const Home = () => {
             transition={{ delay: 1, duration: 0.8 }}
           >
             <Link to="/events">
-              <Button size="lg" className="bg-white text-orange-500 hover:bg-gray-100">
+              <Button size="lg" className=" text-orange-500 hover:bg-gray-100">
                 View Events
               </Button>
             </Link>
