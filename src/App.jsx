@@ -378,7 +378,7 @@ const Footer = () => (
         </div>
       </div>
       <div className="border-t border-gray-700 mt-8 pt-4 text-center text-gray-400">
-        <p>&copy; 2025 Yashomangal Society Ganpati Mandal. All rights reserved.</p>
+        <p>&copy; 2025 Yashomangal Society Ganpati Mandal</p>
         <p className="mt-2">Developed by <span className="text-orange-400 font-semibold">Aryan Pachandi  </span></p>
       </div>
     </div>
