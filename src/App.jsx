@@ -19,6 +19,7 @@ import img12 from "./assets/img12.jpeg"
 // import { Card } from "@/components/ui/card";
 // import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
 
+import Thanku from './Thanku'
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -716,13 +717,18 @@ const Application = () => {
     return Object.keys(newErrors).length === 0;
   };
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
 const handleSubmit = async (e) => {
   e.preventDefault();
+   setIsSubmitting(true);
   if (validateForm()) {
     try {
-      const res = await fetch("https://formspree.io/f/xzzvnedd", {
+      const res = await fetch("https://formcarry.com/s/WFG_e2sQjMw", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+         "Content-Type": "application/json",
+            "Accept": "application/json"  // recommended for Formcarry
+  },
         body: JSON.stringify(formData),
       });
 
@@ -735,6 +741,7 @@ const handleSubmit = async (e) => {
           event: '',
           message: ''
         });
+          window.location.href = "/thank-you";
         setErrors({});
       } else {
         console.error("Formspree submission failed");
@@ -742,6 +749,7 @@ const handleSubmit = async (e) => {
     } catch (err) {
       console.error("Error submitting form:", err);
     }
+    setIsSubmitting(false);
   }
 };
 
@@ -841,9 +849,9 @@ const handleSubmit = async (e) => {
               />
 
               <div className="text-center">
-                <Button type="submit" size="lg" className="px-12">
-                  Submit Application
-                </Button>
+               <Button type="submit" size="lg" className="px-12" disabled={isSubmitting}>
+  {isSubmitting ? "Submitting..." : "Submit Application"}
+</Button>
               </div>
             </form>
           </Card>
@@ -1434,6 +1442,8 @@ const App = () => {
             <Route path="/application" element={<Application />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/notices" element={<Notices />} />
+            <Route path="/thank-you" element={<Thanku />} />
+
             {/* <Route path="/sponsors" element={<Sponsors />} /> */}
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />
