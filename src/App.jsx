@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 
-import logo from "./assets/WhatsApp Image 2025-08-21 at 11.33.35 AM.jpeg";
+import logo from "./assets/logo.jpeg";
 import img1 from "./assets/img1.jpeg"
 import img2 from "./assets/img2.jpeg"
 import img3 from "./assets/img3.jpeg"
@@ -18,6 +18,7 @@ import img12 from "./assets/img12.jpeg"
 
 // import { Card } from "@/components/ui/card";
 // import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
+
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -439,7 +440,7 @@ const Home = () => {
             transition={{ delay: 0.6, duration: 0.8 }}
           >
             <img
-              src="src/assets/WhatsApp Image 2025-08-21 at 11.33.35 AM.jpeg"
+              src={logo}
               alt="Lord Ganesh"
               className="w-full h-full object-cover"
             />
