@@ -1257,7 +1257,7 @@ const FAQ = () => {
                 <Phone className="h-5 w-5" />
                 <span>Call Us</span>
               </a>
-              <a href="mailto:" className="flex items-center justify-center space-x-2 bg-green-600 text-white px-4 py-3 rounded-lg hover:bg-green-700 transition-colors">
+              <a href="mailto:yashomagalmitramandal@gmail.com" className="flex items-center justify-center space-x-2 bg-green-600 text-white px-4 py-3 rounded-lg hover:bg-green-700 transition-colors">
                 <Mail className="h-5 w-5" />
                 <span>Email Us</span>
               </a>
@@ -1333,7 +1333,7 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold">Email</h3>
                     <p className="text-gray-600">
-                      <a href="mailto:info@ganpatimandal.org" className="hover:text-orange-500">yashomagalmitramandal@gmail.com</a><br />
+                      <a href="mailto:yashomagalmitramandal@gmail.com" className="hover:text-orange-500">yashomagalmitramandal@gmail.com</a><br />
                       {/* <a href="mailto:events@ganpatimandal.org" className="hover:text-orange-500">events@ganpatimandal.org</a> */}
                     </p>
                   </div>
