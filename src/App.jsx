@@ -213,7 +213,7 @@ const Navbar = () => {
     { path: '/application', label: 'Apply' },
     { path: '/gallery', label: 'Gallery' },
     { path: '/notices', label: 'Notices' },
-    { path: '/sponsors', label: 'Sponsors' },
+    // { path: '/sponsors', label: 'Sponsors' },
     { path: '/faq', label: 'FAQ' },
     { path: '/contact', label: 'Contact' },
   ];
@@ -333,7 +333,7 @@ const Footer = () => (
       </div>
       <div className="border-t border-gray-700 mt-8 pt-4 text-center text-gray-400">
         <p>&copy; 2025 Yashomangal Society Ganpati Mandal. All rights reserved.</p>
-        <p className="mt-2">Developed by <span className="text-orange-400 font-semibold">Aryan Pachandi</span></p>
+        <p className="mt-2">Developed by <span className="text-orange-400 font-semibold">Aryan Pachandi & Divesh Goankar </span></p>
       </div>
     </div>
   </footer>
@@ -1364,7 +1364,7 @@ const App = () => {
             <Route path="/application" element={<Application />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/notices" element={<Notices />} />
-            <Route path="/sponsors" element={<Sponsors />} />
+            {/* <Route path="/sponsors" element={<Sponsors />} /> */}
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
