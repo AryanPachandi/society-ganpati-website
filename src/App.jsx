@@ -849,6 +849,9 @@ const handleSubmit = async (e) => {
               />
 
               <div className="text-center">
+               <span className="block mb-4">
+    Don't submit for no reason, apply for it only if needed
+  </span>
                <Button type="submit" size="lg" className="px-12" disabled={isSubmitting}>
   {isSubmitting ? "Submitting..." : "Submit Application"}
 </Button>
