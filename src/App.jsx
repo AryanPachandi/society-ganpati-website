@@ -583,7 +583,7 @@ const Events = () => {
           transition={{ delay: 0.2, duration: 0.8 }}
         >
           <h1 className="text-4xl font-bold mb-4">Festival Events</h1>
-          <p className="text-xl text-gray-600">Join us for 10 days of celebration and devotion</p>
+          <p className="text-xl text-gray-600">Join us for 7 days of celebration and devotion</p>
         </motion.div>
 
         {/* Today's Event Highlight */}
@@ -1406,7 +1406,7 @@ const Contact = () => {
           whileTap={{ scale: 0.9 }}
         >
           <a
-            href="https://wa.me/8767907739"
+            href="https://wa.me/918767907739"
             target="_blank"
             rel="noopener noreferrer"
             className="w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors"
