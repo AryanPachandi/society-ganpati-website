@@ -100,10 +100,10 @@ const sponsors = [
 const faqData = [
   { question: "What are the Mandal timings?", answer: "The Mandal is open daily from 6:00 AM to 10:00 PM during the festival period." },
   { question: "How can I participate in events?", answer: "You can register for events through our Application page or contact us directly." },
-  { question: "Is there parking available?", answer: "Yes, we have arranged parking facilities nearby. Please follow the parking guidelines." },
+  // { question: "Is there parking available?", answer: "Yes, we have arranged parking facilities nearby. Please follow the parking guidelines." },
   { question: "Can I volunteer for the Mandal?", answer: "Absolutely! We welcome volunteers. Please contact us or visit our office for registration." },
   { question: "Are there any entry fees?", answer: "No, there are no entry fees. However, donations are welcome to support our activities." },
-  { question: "What safety measures are in place?", answer: "We have security personnel, first aid facilities, and follow all safety protocols." },
+  // { question: "What safety measures are in place?", answer: "We have security personnel, first aid facilities, and follow all safety protocols." },
 ];
 
 // Utility Components
@@ -1081,6 +1081,11 @@ const Notices = () => {
               <a href="tel: +918767907739" className="flex items-center justify-center space-x-2 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
                 <Phone className="h-4 w-4" />
                 <span>Emergency: +91 8767907739</span>
+                {/* <span>Emergency: +91 8669230258</span> */}
+              </a>
+                 <a href="tel: +918767907739" className="flex items-center justify-center space-x-2 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
+                <Phone className="h-4 w-4" />
+                {/* <span>Emergency: +91 8767907739</span> */}
                 <span>Emergency: +91 8669230258</span>
               </a>
               <a href="https://wa.me/8468913733" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center space-x-2 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
