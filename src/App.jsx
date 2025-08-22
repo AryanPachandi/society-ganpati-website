@@ -313,11 +313,11 @@ const Footer = () => (
             </div>
             <div className="flex items-center space-x-2">
               <Mail className="h-4 w-4" />
-              <span>info@ganpatimandal.org</span>
+              <span>yashomagalmitramandal@gmail.com</span>
             </div>
             <div className="flex items-center space-x-2">
               <MapPin className="h-4 w-4" />
-              <span>123 Temple Street, Mumbai, Maharashtra</span>
+              <span>Yashomangal Society Pimpri Chinchwad</span>
             </div>
           </div>
         </div>
@@ -464,8 +464,8 @@ const Home = () => {
             >
               <h2 className="text-3xl font-bold mb-6">About Our Mandal</h2>
               <p className="text-gray-600 mb-4">
-                Established in 1995, Yashomangal Society Ganpati Mandal has been serving
-                the community for over 28 years. We organize grand celebrations that bring together
+                 Yashomangal Society Ganpati Mandal has been serving
+                the community for over years. We organize grand celebrations that bring together
                 people from all walks of life in devotion and unity.
               </p>
               <p className="text-gray-600 mb-6">
@@ -474,13 +474,13 @@ const Home = () => {
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-orange-500">28+</div>
+                  <div className="text-2xl font-bold text-orange-500">10+</div>
                   <div className="text-gray-600">Years of Service</div>
                 </div>
-                <div className="text-center">
+                {/* <div className="text-center">
                   <div className="text-2xl font-bold text-orange-500">50K+</div>
                   <div className="text-gray-600">Annual Visitors</div>
-                </div>
+                </div> */}
               </div>
             </motion.div>
             <motion.div
@@ -670,21 +670,35 @@ const Application = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (validateForm()) {
-      console.log('Form submitted:', formData);
-      setShowToast(true);
-      setFormData({
-        fullName: '',
-        mobile: '',
-        email: '',
-        event: '',
-        message: ''
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  if (validateForm()) {
+    try {
+      const res = await fetch("https://formspree.io/f/xzzvnedd", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
-      setErrors({});
+
+      if (res.ok) {
+        setShowToast(true);
+        setFormData({
+          fullName: '',
+          mobile: '',
+          email: '',
+          event: '',
+          message: ''
+        });
+        setErrors({});
+      } else {
+        console.error("Formspree submission failed");
+      }
+    } catch (err) {
+      console.error("Error submitting form:", err);
     }
-  };
+  }
+};
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -805,9 +819,9 @@ const Application = () => {
                 <Phone className="h-4 w-4" />
                 <span>+91 98765 43210</span>
               </a>
-              <a href="mailto:info@ganpatimandal.org" className="flex items-center justify-center space-x-2 text-blue-600 hover:text-blue-800">
+              <a href="mailto:yashomagalmitramandal@gmail.com" className="flex items-center justify-center space-x-2 text-blue-600 hover:text-blue-800">
                 <Mail className="h-4 w-4" />
-                <span>info@ganpatimandal.org</span>
+                <span>yashomagalmitramandal@gmail.com</span>
               </a>
             </div>
           </Card>
@@ -1244,7 +1258,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold">Address</h3>
-                    <p className="text-gray-600">pune<br />pimprichinchwadd</p>
+                    <p className="text-gray-600">pune<br />Pimpri Chinchwad</p>
                   </div>
                 </div>
 
@@ -1268,8 +1282,8 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold">Email</h3>
                     <p className="text-gray-600">
-                      <a href="mailto:info@ganpatimandal.org" className="hover:text-orange-500">info@ganpatimandal.org</a><br />
-                      <a href="mailto:events@ganpatimandal.org" className="hover:text-orange-500">events@ganpatimandal.org</a>
+                      <a href="mailto:info@ganpatimandal.org" className="hover:text-orange-500">yashomagalmitramandal@gmail.com</a><br />
+                      {/* <a href="mailto:events@ganpatimandal.org" className="hover:text-orange-500">events@ganpatimandal.org</a> */}
                     </p>
                   </div>
                 </div>
@@ -1313,7 +1327,7 @@ const Contact = () => {
           >
             <Card className="p-0 overflow-hidden h-full">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.991346903887!2d72.8311!3d19.0177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce72bf6ca1b3%3A0x9cb455c2d9bb0008!2sDadar%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1629800000"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.746041354566!2d73.79146427600836!3d18.630489065805815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9b2da6d56cf%3A0x33d187818c101d91!2sYashomangal%20Society%2C%20Harshal%20Residency%2C%20Gawade%20Nagar%2C%20Chinchwad%2C%20Pimpri-Chinchwad%2C%20Maharashtra%20411033!5e0!3m2!1sen!2sin!4v1755834042348!5m2!1sen!2sin"
                 width="100%"
                 height="500"
                 style={{ border: 0 }}
